@@ -1,0 +1,5 @@
+[17-Mar-2023 14:48:19 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: MySQL server has gone away in /home3/geumcain/public_html/admin/TimeTable_upload.php:228
+Stack trace:
+#0 /home3/geumcain/public_html/admin/TimeTable_upload.php(228): mysqli_query(Object(mysqli), 'SELECT * FROM `...')
+#1 {main}
+  thrown in /home3/geumcain/public_html/admin/TimeTable_upload.php on line 228
