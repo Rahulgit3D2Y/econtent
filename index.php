@@ -14,7 +14,9 @@
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- bootstrap -->
-    
+    <!-- bootstrap icon -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 
     <!-- style -->
@@ -25,25 +27,23 @@
         <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Offcanvas navbar large">
         <div class="container-fluid">
           <a class="navbar-brand fw-bold" href="#">G.</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+          
           <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
             <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Offcanvas</h5>
+            <i class="bi bi-person-circle"></i>
               <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#footer-section">Join</a>
+                  <a class="btn btn-primary m-2 nav-link" href="signin.php" target="_blank" >Sign In</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#article-section">Articles cards</a>
+                  <a class="btn btn-primary m-2 nav-link" href="login.php" target="_blank">Login</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
+                  <i class="bi bi-person-circle"></i>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end ">
                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -58,6 +58,10 @@
               
             </div>
           </div>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
         </div>
       </nav>
     </header>
