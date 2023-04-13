@@ -16,28 +16,41 @@
     }
     </style>
   </head>
-  <body >
- <div class="container">
-  <form class="form">
-    <h2>Sign up</h2>
-    <div class="inputBox">
-      <input type="text" name="" required="">
-      <label>Username</label>
-    </div>
-    <div class="inputBox">
-      <input type="password" name="" required="">
-      <label>Password</label>
-    </div>
-    <div class="remember">
-      <input type="checkbox" name="" id="check">
-      <label for="check">Remember me</label>
-    </div>
-    <div class="inputBox">
-      <input type="submit" value="Sign In">
-    </div>
-  </form>
- </div>
+  <body>
+  <div class="container">
+    <form class="form">
+      <h2>Sign up</h2>
+      <div class="inputBox">
+        <input type="text" name="username" required="">
+        <label>Username</label>
+      </div>
+      <div class="inputBox">
+        <input type="email" name="email" required="">
+        <label>Email</label>
+      </div>
+      
+      <div class="inputBox">
+        <input type="password" name="password" required="">
+        <label>Password</label>
+      </div>
+      <div class="inputBox">
+        <input type="text" name="country" required="">
+        <label>Country</label>
+      </div>
+      <div class="inputBox">
+        <input type="tel" name="phone" required="">
+        <label>Phone Number</label>
+      </div>
+      <div class="remember">
+        <input type="checkbox" name="remember" id="check">
+        <label for="check">Remember me</label>
+      </div>
+      <div class="inputBox">
+        <input type="submit" value="Sign In">
+      </div>
+    </form>
+  </div>
+</body>
 
-  </body>
 </html>
 
