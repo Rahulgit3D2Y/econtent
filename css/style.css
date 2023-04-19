@@ -1,3 +1,11 @@
+*
+{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'DM Sans', sans-serif;
+}
+
 .box
 {
     display: flex;
@@ -52,3 +60,310 @@
 {
     height: 200px;
 }
+.article_main
+{
+    display: flex;
+    justify-content: center;
+}
+.article-container
+{
+    width: 900px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.heading
+{
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+.logo
+{
+    height: 30px;
+}
+.info
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.info>div::after
+{
+    content: "";
+    align-items: center;
+    height: 5px;
+    width: 5px;
+    background-color: #e03030;
+    border-radius: 50%;
+    display: inline-block;
+}
+.info>span:last-of-type::after{
+    content: none;
+}
+.blur-text
+{
+    filter: blur(5px);
+}
+.pretext
+{
+    font-size: xx-large;
+    font-weight: 700;
+    color: grey;
+}
+.first-letter
+{
+    color: green;
+    font-size: 3rem;
+    font-weight: 500;
+
+}
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.unclickable
+{
+    pointer-events: none;
+}
+
+
+
+/* SIGNUP_PAGE */
+.sign_body{
+    height: 100vh;
+    min-width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    .sign_container {
+      
+      border-radius: 20px;-webkit-box-shadow: 12px 13px 2.5px 3.5px #4646be;
+      -moz-box-shadow: 12px 13px 2.5px 3.5px #4646be;
+      box-shadow: 12px 13px 2.5px 3.5px #4646be;
+    
+      background: rgba(131,159,202,0.5);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+  
+      padding: 30px;
+      width: 400px;
+    }
+    
+    .sform {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    h2 {
+      text-align: center;
+      color: white;
+      margin-bottom: 30px;
+    }
+    
+    .sinputBox {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    
+    .sinputBox label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 16px;
+      color: #fff;
+      pointer-events: none;
+      transition: 0.5s;
+    }
+    
+    .sinputBox input {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      border: none;
+      border-bottom: 1px solid #fff;
+      outline: none;
+      background: transparent;
+      transition: 0.5s;
+    }
+    
+    .sinputBox input:focus ~ label,
+    .sinputBox input:valid ~ label {
+      top: -20px;
+      font-size: 12px;
+    }
+    
+    .sremember {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .sremember label {
+      font-size: 14px;
+      color: #fff;
+    }
+    
+    .sremember input {
+      margin-right: 10px;
+    }
+    
+    .sinputBox input[type="submit"] {
+      width: 100%;
+      background: #47aeff;
+  background: -webkit-linear-gradient(99deg, #47aeff 0%, #4346ff 100%);
+  background: linear-gradient(99deg, #47aeff 0%, #4346ff 100%);
+      border: none;
+      border-radius: 20px;
+      color: #ffffff;
+      padding: 10px 0;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+    
+    .sinputBox input[type="submit"]:hover {
+      background: #4346ff;
+  background: -webkit-linear-gradient(99deg, #4346ff 0%, #47aeff 100%);
+  background: linear-gradient(99deg, #4346ff 0%, #47aeff 100%);
+      color: #73fad8;
+    }
+    
+
+    /* LOGIN_PAGE */
+    
+
+.login_body {
+    height: 100vh;
+    min-width: 200px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background: radial-gradient(at bottom right, #474bff 0, #474bff 11.5px, rgba(71,75,255,0.2) 11.5px, rgba(71,75,255,0.2) 23px, rgba(71,75,255,0.75) 23px, rgba(71,75,255,0.75) 34.5px, rgba(71,75,255,0.25) 34.5px, rgba(71,75,255,0.25) 46px, rgba(71,75,255,0.3) 46px, rgba(71,75,255,0.3) 57.5px, rgba(71,75,255,0.75) 57.5px, rgba(71,75,255,0.75) 69px, rgba(71,75,255,0.2) 69px, rgba(71,75,255,0.2) 80.5px, transparent 80.5px, transparent 92px), radial-gradient(at top left, transparent 0, transparent 11.5px, rgba(71,75,255,0.2) 11.5px, rgba(71,75,255,0.2) 23px, rgba(71,75,255,0.75) 23px, rgba(71,75,255,0.75) 34.5px, rgba(71,75,255,0.3) 34.5px, rgba(71,75,255,0.3) 46px, rgba(71,75,255,0.25) 46px, rgba(71,75,255,0.25) 57.5px, rgba(71,75,255,0.75) 57.5px, rgba(71,75,255,0.75) 69px, rgba(71,75,255,0.2) 69px, rgba(71,75,255,0.2) 80.5px, #474bff 80.5px, #474bff 92px, transparent 92px, transparent 230px);
+  background-blend-mode: multiply;
+  background-size: 92px 92px, 92px 92px;
+  background-color: #47d3ff;
+    }
+  
+      .lcontainer {
+          background: #474bff;
+          background: -webkit-linear-gradient(54deg, #474bff 0%, #bc48ff 100%);
+          background: linear-gradient(54deg, #474bff 0%, #bc48ff 100%);
+          box-shadow: -10vmin 10vmin 0 rgba(255,255,255,0.07);
+          padding: 40px 100px 60px 50px; 
+          animation: spin 15s ease-in-out  infinite;
+          padding: 40px;
+          width: 300px;
+      }
+    
+    .lform {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    h2 {
+      text-align: center;
+      color: white;
+      margin-bottom: 30px;
+    }
+    
+    .linputBox {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    
+    .linputBox label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 16px;
+      color: #fff;
+      pointer-events: none;
+      transition: 0.5s;
+    }
+    
+    .linputBox input {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      border: none;
+      border-bottom: 1px solid #fff;
+      outline: none;
+      background: transparent;
+      transition: 0.5s;
+    }
+    
+    .linputBox input:focus ~ label,
+    .linputBox input:valid ~ label {
+      top: -20px;
+      font-size: 12px;
+    }
+    
+    .lremember {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .lremember label {
+      font-size: 14px;
+      color: #fff;
+    }
+    
+    .lremember input {
+      margin-right: 10px;
+    }
+    
+    .linputBox input[type="submit"] {
+      width: 100%;background: #5373e3;
+      background: -webkit-linear-gradient(215deg, #5373e3 0%, #d3d9d9 100%);
+      background: linear-gradient(215deg, #5373e3 0%, #d3d9d9 100%);
+      border: none;
+      border-radius: 20px;
+      color: #ffffff;
+      padding: 10px 0;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+    
+    .linputBox input[type="submit"]:hover {
+      background: #d3d9d9;
+      background: -webkit-linear-gradient(215deg, #d3d9d9 0%, #5373e3 100%);
+      background: linear-gradient(215deg, #d3d9d9 0%, #5373e3 100%);
+      color: #73fad8;
+    }
+  
+    @keyframes spin {
+      0%,100%
+      {   border-radius: 55% 45% 50% 50% / 41% 64% 36% 59%;
+      }
+      15%
+      {
+          border-radius: 69% 31% 65% 35% / 31% 68% 32% 69%;
+      }
+      25%
+      {
+          border-radius: 67% 33% 74% 26% / 37% 62% 38% 63%;    }
+      50%
+      {
+          border-radius: 58% 12% 93% 7% / 11% 81% 19% 89%;    }
+      75%
+      {
+          border-radius: 37% 63% 69% 31% / 37% 65% 35% 63%;    }
+  }
+  
+  

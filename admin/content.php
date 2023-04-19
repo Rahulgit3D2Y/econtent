@@ -3,7 +3,7 @@ include("include/header.php");
 require("permission_check.php");
 ?>
 <!---------------------  ADD Content  Modal ---------------------------->
-<div class="modal fade" id="addcontentmodelname" tabindex="-1" aria-labelledby="addcontentmodelnameLabel" aria-hidden="true">
+<div class="modal fade" id="addcontentmodelname" tabindex="-1" aria-labelledby="addcontentmodelnameLabel" aria-hidden="true"  data-bs-backdrop="static" data-bs-keyboard="false">
 	<?php 
  
 extract($_POST);

@@ -1,35 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/Login_form.css">
-    <title>Login</title>
- 
-  </head>
-  <body>
- <div class="container">
-  <form class="form">
+<?php include("include/header.php"); ?>
+    <div class="login_body">
+ <div class="lcontainer">
+  <form class="lform" method="POST" action="#">
     <h2>Welcome Back</h2>
-    <div class="inputBox">
-      <input type="text" name="" required="">
+    <div class="linputBox">
+      <input type="email" name="InputEmailID" id="InputEmailID" autocomplete="off" required>
       <label>Username</label>
     </div>
-    <div class="inputBox">
-      <input type="password" name="" required="">
+    
+    <div class="linputBox">
+      <input type="password" name="InputPassword" id="InputPassword"  autocomplete="off" required>
       <label>Password</label>
     </div>
-    <div class="remember">
-      <input type="checkbox" name="" id="check">
-      <label for="check">Remember me</label>
-    </div>
-    <div class="inputBox">
-      <input type="submit" value="Sign In">
+
+    <div class="linputBox">
+      <input type="submit" name="UserSignIn" id="UserSignIn" value="Sign In">
     </div>
   </form>
  </div>
-
-  </body>
-</html>
-
+</div>
+  
+<?php include("include/footer.php"); ?>

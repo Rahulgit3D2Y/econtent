@@ -147,15 +147,24 @@ $schoolfullnameresult=mysqli_fetch_assoc($schoolfullname);
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
-                        <!---- Start Of First Row-->
+                         <!---- Start Of First Row-->
                         
                         <div class="row">
                           
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
-                                 <a  style=" color: white; text-decoration:none ">    <div class="card-body">Total carousel / Active carousel</div>
+                                 <a  style=" color: white; text-decoration:none ">    <div class="card-body">Total Content</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                       
+                                         <?php
+                                            
+                                          $ShowContentcount=mysqli_query($con,"SELECT count(`econtent_message_id`) FROM `econtent_message` WHERE `econtent_message_status` = 'Active'");
+                                          $ShowContentcountResult=mysqli_fetch_array($ShowContentcount);
+                                          $ShowContentcountFetchtotal= $ShowContentcountResult[0];
+
+                                       ?>
+                                      <?php
+                                        echo $ShowContentcountFetchtotal;
+                                       ?>
                                           
                                         <!--<a class="small text-white stretched-link" href="#">View Details</a>-->
                                         <div class="small text-white"><!--<i class="fas fa-angle-right"></i>--></div>
@@ -164,9 +173,19 @@ $schoolfullnameresult=mysqli_fetch_assoc($schoolfullname);
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-warning text-white mb-4">
-                                  <a style=" color: white; text-decoration:none">   <div class="card-body">Notice</div>
+
+                                  <a style=" color: white; text-decoration:none">   <div class="card-body">Total Premium Content</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                          
+                                          <?php
+                                            
+                                          $PremimumContent=mysqli_query($con,"SELECT count(`econtent_message_id`) FROM `econtent_message` WHERE `econtent_message_status` = 'Active' AND `econtent_message_contenttype`='Premium'");
+                                          $PremimumContentResult=mysqli_fetch_array($PremimumContent);
+                                          $PremimumContentFetchtotal= $PremimumContentResult[0];
+
+                                       ?>
+                                      <?php
+                                        echo $PremimumContentFetchtotal;
+                                       ?>
                                              
                                         
                                         <!--<a class="small text-white stretched-link" href="#">View Details</a>-->
@@ -176,9 +195,19 @@ $schoolfullnameresult=mysqli_fetch_assoc($schoolfullname);
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-secondary text-white mb-4">
-                                   <a style=" color: white; text-decoration:none">  <div class="card-body">Contact Detail</div>
+                                   <a style=" color: white; text-decoration:none">  <div class="card-body">Total Non Premium Content</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                       
+                                          <?php
+                                            
+                                          $NonPremimumContent=mysqli_query($con,"SELECT count(`econtent_message_id`) FROM `econtent_message` WHERE `econtent_message_status` = 'Active' AND `econtent_message_contenttype`='Non Premium'");
+                                          $NonPremimumContentResult=mysqli_fetch_array($NonPremimumContent);
+                                          $NonPremimumContentFetchtotal= $NonPremimumContentResult[0];
+
+                                       ?>
+                                      <?php
+                                        echo $NonPremimumContentFetchtotal;
+                                       ?>
+                                             
                                       
                                         <!--<a class="small text-white stretched-link" href="#">View Details</a>-->
                                         <div class="small text-white"><!--<i class="fas fa-angle-right"></i>--></div>
@@ -187,9 +216,18 @@ $schoolfullnameresult=mysqli_fetch_assoc($schoolfullname);
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-danger text-white mb-4">
-                                  <a style=" color: white; text-decoration:none">  <div class="card-body"> Total Course</div>
+                                  <a style=" color: white; text-decoration:none">  <div class="card-body"> Total User</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                         
+                                         <?php
+                                            
+                                          $userregistrationcount=mysqli_query($con,"SELECT count(`userregistration_id`) FROM `userregistration` WHERE `userregistration_status` = 'Active'");
+                                          $userregistrationcountResult=mysqli_fetch_array($userregistrationcount);
+                                          $userregistrationcountFetchtotal= $userregistrationcountResult[0];
+
+                                       ?>
+                                      <?php
+                                        echo $userregistrationcountFetchtotal;
+                                       ?>
                                     <!--    <a class="small text-white stretched-link" href="#">View Details</a>-->
                                         <div class="small text-white"><!--<i class="fas fa-angle-right"></i>--></div>
                                     </div></a>
@@ -197,6 +235,35 @@ $schoolfullnameresult=mysqli_fetch_assoc($schoolfullname);
                             </div>
                         </div>
                        <!--- End Of First Row--->
+
+                           <!---- Start Of Second Row-->
+                        
+                        <div class="row">
+                          
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-primary text-white mb-4">
+                                 <a  style=" color: white; text-decoration:none ">    <div class="card-body">Total Draft Content</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                         <?php
+                                            
+                                          $ShowContentcount=mysqli_query($con,"SELECT count(`econtent_message_id`) FROM `econtent_message` WHERE `econtent_message_status` = 'Draft'");
+                                          $ShowContentcountResult=mysqli_fetch_array($ShowContentcount);
+                                          $ShowContentcountFetchtotal= $ShowContentcountResult[0];
+
+                                       ?>
+                                      <?php
+                                        echo $ShowContentcountFetchtotal;
+                                       ?>
+                                          
+                                        <!--<a class="small text-white stretched-link" href="#">View Details</a>-->
+                                        <div class="small text-white"><!--<i class="fas fa-angle-right"></i>--></div>
+                                    </div></a>
+                                </div>
+                            </div>
+                           
+                          
+                        </div>
+                       <!--- End Of Second Row--->
                        
 
 

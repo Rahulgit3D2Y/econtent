@@ -1,6 +1,6 @@
 <?php
 
- $url="http://localhost/geumca/new1/admin/api/NoticeApi.php?key";
+ $url="http://localhost/econtent/admin/api/NoticeApi.php?key=jifuie";
 
  $ch=curl_init();
  curl_setopt($ch,CURLOPT_URL,$url);
