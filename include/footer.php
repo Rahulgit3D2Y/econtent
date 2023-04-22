@@ -6,7 +6,7 @@
 
 <!-- Bootstrap JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
+<script src="https://kit.fontawesome.com/edae2cf7d5.js" crossorigin="anonymous"></script>
 <script>
              $(document).ready(function() {
                 $("#blur-btn").click(function() {

@@ -1,11 +1,11 @@
 <?php include("include/header.php"); ?>
     <main class="container-fluid p-3">
         <div class="row">
-            <div class="col-md-8">
-              <div> 
+            <!-- <div class="col-md-8"> -->
+              <!-- <div> 
                 <img src="assests/images/image-web-3-desktop.jpg"class="img-fluid hero-img" alt="" >
-              </div>
-              <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              </div> -->
+              <!-- <div id="carouselExampleIndicators" class="carousel slide container" data-ride="carousel">
                 <ol class="carousel-indicators">
                   <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                   <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -13,21 +13,21 @@
                 </ol>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img class="d-block w-100 " src="./assests/images/image-web-3-desktop.jpg" alt="First slide" style="height: 400px;">
+                    <img class="d-block w-100 " src="./assests/images/image-web-3-desktop.jpg" alt="First slide" ">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Lorem, ipsum dolor.</h5>
                       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus!</p>
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100 " src="./assests/images/image-retro-pcs.jpg" alt="Second slide"style="height: 400px;">
+                    <img class="d-block w-100 " src="https://source.unsplash.com/1000x1000?" alt="Second slide"">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Lorem, ipsum dolor.</h5>
                       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus!</p>
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100" src="./assests/images/image-gaming-growth.jpg" alt="Third slide"style="height: 400px;">
+                    <img class="img-fluid hero-img" src="./assests/images/image-gaming-growth.jpg" alt="Third slide"">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Lorem, ipsum dolor.</h5>
                       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus!</p>
@@ -43,7 +43,7 @@
                   <span class="sr-only">Next</span>
                 </a>
               </div> -->
-                <div class="row py-3">
+                <!-- <div class="row py-3">
                     <div class="col-xl-6 p-3 my-3">
                         <div class="display-4 fw-bold w-100">THE Lorem ipsum dolor sit.</div>
                     </div>
@@ -59,23 +59,24 @@
                     <h2 class="text-warning">New</h2>
                       <?php
 
-  $count = 0;
-   $NewArticledview=mysqli_query($con,"SELECT * FROM `econtent_message` WHERE `econtent_message_status`='Active'  ORDER BY `econtent_message_id` DESC");
-  while($NewArticledviewresult=mysqli_fetch_assoc($NewArticledview))
-    {
-        $count+=1;
-        $messageid=$NewArticledviewresult['econtent_message_id'];
-        $messagecontentid=$NewArticledviewresult['econtent_message_content_id'];
-        $messagesubcontentid=$NewArticledviewresult['econtent_message_subcontent_id'];
+  // $count = 0;
+  //  $NewArticledview=mysqli_query($con,"SELECT * FROM `econtent_message` WHERE `econtent_message_status`='Active'  ORDER BY `econtent_message_id` DESC");
+  // while($NewArticledviewresult=mysqli_fetch_assoc($NewArticledview))
+  //   {
+  //       $count+=1;
+  //       $messageid=$NewArticledviewresult['econtent_message_id'];
+  //       $messagecontentid=$NewArticledviewresult['econtent_message_content_id'];
+  //       $messagesubcontentid=$NewArticledviewresult['econtent_message_subcontent_id'];
+  //       $messagecontentTitle=$NewArticledviewresult['econtent_message_tittle'];
       ?>
       
                     <div class="article">
-                      <a href="article.php?content_id=<?php echo urlencode(base64_encode($messagecontentid)); ?>&subcontent_id=<?php echo urlencode(base64_encode($messagesubcontentid)); ?>&message_id=<?php echo urlencode(base64_encode($messageid)); ?>" style=" color: white; text-decoration:none ">
-                         <h4 class="text-light"><?php echo $NewArticledviewresult['econtent_message_tittle']." (".$NewArticledviewresult['econtent_message_contenttype'].")"; ?></h4>
-                      <p class="text-secondary"><?php echo substr($NewArticledviewresult['econtent_message_content'],0,62);  ?></p></a> 
+                      <a href="article.php?title=<?php// echo $messagecontentTitle; ?>&mid=<?php //echo urlencode(base64_encode($messageid)); ?>" style=" color: white; text-decoration:none ">
+                         <h4 class="text-light"><?php //echo $NewArticledviewresult['econtent_message_tittle']." (".$NewArticledviewresult['econtent_message_contenttype'].")"; ?></h4>
+                      <p class="text-secondary"><?php// echo substr($NewArticledviewresult['econtent_message_content'],0,62);  ?></p></a> 
                     </div>
                     <hr class="text-secondary">
-                   <?php } ?>
+                   <?php// } ?>
                     
 
 
@@ -115,145 +116,181 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p>
                 </div>
             </div>
-        </div>
+        </div> -->
 
  <!-- Article-cards -->       
         <section class="container" id="article-section">  
             <div class="album p-5 bg-light">
           
             <div class="row">
-              <div class="col-sm-12 col-md-6 col-xl-4">
+              <div class="col-sm-12 col-md-6 col-xl-3">
                 <div class="article-card card mb-4 box-shadow text-dark">
                   <div>
                     <img src="assests/images/11-slow-website-hero-1200x450.jpg" class="img-fluid card-bg-img rounded" alt="">
                   </div>
-                  <div class="card-img-overlay">
+                  <div class="card-body">
                     <h3 class="card-title">Lorem, ipsum dolor.</h3>
                     <p class="card-text d-inline-block text-truncate" style="width:300px;">Lorem itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p>
+                    <div class="btn-group d-block">
+                    <a href="article.html"class="btn btn-sm btn-outline-dark"  target="_blank">Read More</a>
+                    </div>
+                  </div>
+                </div>   
+              </div>
+              <div class="col-sm-12 col-md-6 col-xl-3">
+                <div class="article-card card mb-4 box-shadow text-dark">
+                  <div>
+                    <img src="https://source.unsplash.com/1500x700/?luffy" class="img-fluid card-bg-img rounded" alt="">
+                  </div>
+                  <div class="card-body">
+                    <h3 class="card-title">Lorem, ipsum dolor.</h3>
+                    <p class="card-text d-inline-block text-truncate"style="width:300px;">Lorem itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur </p>
                     <div class="btn-group d-block">
                       <a href="article.html"class="btn btn-sm btn-outline-dark"  target="_blank">Read More</a>
                     </div>
                   </div>
                 </div>   
               </div>
-              <div class="col-sm-12 col-md-6 col-xl-4">
-                <div class="article-card card mb-4 box-shadow text-white">
+              <div class="col-sm-12 col-md-6 col-xl-3">
+                <div class="article-card card mb-4 box-shadow text-dark">
                   <div>
-                    <img src="https://source.unsplash.com/1500x700/?construction" class="img-fluid  card-bg-img rounded" alt="" >
+                    <img src="https://source.unsplash.com/1500x700/?medicine" class="img-fluid  card-bg-img rounded" alt="" >
                   </div>
-                  <div class="card-img-overlay">
+                  <div class="card-body">
                     <h3 class="card-title">Lorem, ipsum dolor.</h3>
-                    <p class="card-text d-inline-block text-truncate"style="width:300px;">Lorem itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p>
+                    <p class="card-text d-inline-block text-truncate"style="width:300px;">Lorem itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur </p>
                     <div class="btn-group d-block">
-                      <button type="button" class="btn btn-sm btn-outline-light">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-light">Edit</button>
-                    </div>
-                  </div>
-                </div>   
-              </div>
-              <div class="col-sm-12 col-md-6 col-xl-4">
-                <div class="article-card card mb-4 box-shadow text-white">
-                  <div>
-                    <img src="https://source.unsplash.com/1500x700/?" class="img-fluid  card-bg-img rounded" alt="" >
-                  </div>
-                  <div class="card-img-overlay">
-                    <h3 class="card-title">Lorem, ipsum dolor.</h3>
-                    <p class="card-text d-inline-block text-truncate"style="width:300px;">Lorem itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p>
-                    <div class="btn-group d-block">
-                      <button type="button" class="btn btn-sm btn-outline-light">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-light">Edit</button>
+                      <a href="article.html"class="btn btn-sm btn-outline-dark"  target="_blank">Read More</a>
                     </div>
                   </div>
                 </div>
               </div>  
-              
-              <div class="col-sm-12 col-md-6 col-xl-4">
-                <div class="article-card card mb-4 box-shadow text-white">
+              <div class="col-sm-12 col-md-6 col-xl-3">
+                <div class="article-card card mb-4 box-shadow text-dark">
                   <div>
                     <img src="https://source.unsplash.com/1500x700/?science" class="img-fluid  card-bg-img rounded" alt="" >
                   </div>
-                  <div class="card-img-overlay">
+                  <div class="card-body">
                     <h3 class="card-title">Lorem, ipsum dolor.</h3>
                     <p class="card-text d-inline-block text-truncate"style="width:300px;">Lorem itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p>
                     <div class="btn-group d-block">
-                      <button type="button" class="btn btn-sm btn-outline-light">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-light">Edit</button>
+                      <a href="article.html"class="btn btn-sm btn-outline-dark"  target="_blank">Read More</a>
                     </div>
                   </div>
                 </div>   
               </div>
-              <div class="col-sm-12 col-md-6 col-xl-4">
-                <div class="article-card card mb-4 box-shadow text-white">
+
+
+              <div class="col-sm-12 col-md-6 col-xl-3">
+                <div class="article-card card mb-4 box-shadow text-dark">
                   <div>
                     <img src="https://source.unsplash.com/1500x700/?computer" class="img-fluid  card-bg-img rounded" alt="" >
                   </div>
-                  <div class="card-img-overlay">
+                  <div class="card-body">
                     <h3 class="card-title">Lorem, ipsum dolor.</h3>
                     <p class="card-text d-inline-block text-truncate"style="width:300px;">Lorem itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p>
                     <div class="btn-group d-block">
-                      <button type="button" class="btn btn-sm btn-outline-light">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-light">Edit</button>
+                      <a href="article.html"class="btn btn-sm btn-outline-dark"  target="_blank">Read More</a>
                     </div>
                   </div>
                 </div>   
               </div>
-              <div class="col-sm-12 col-md-6 col-xl-4">
-                <div class="article-card card mb-4 box-shadow text-white">
+              <div class="col-sm-12 col-md-6 col-xl-3">
+                <div class="article-card card mb-4 box-shadow text-dark">
                   <div>
                     <img src="https://source.unsplash.com/1500x700/?web" class="img-fluid  card-bg-img rounded" alt="" >
                   </div>
-                  <div class="card-img-overlay">
+                  <div class="card-body">
                     <h3 class="card-title">Lorem, ipsum dolor.</h3>
                     <p class="card-text d-inline-block text-truncate"style="width:300px;">Lorem itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p>
                     <div class="btn-group d-block">
-                      <button type="button" class="btn btn-sm btn-outline-light">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-light">Edit</button>
+                      <a href="article.html"class="btn btn-sm btn-outline-dark"  target="_blank">Read More</a>
                     </div>
                   </div>
                 </div>
               </div>
-
-              <div class="col-sm-12 col-md-6 col-xl-4">
-                <div class="article-card card mb-4 box-shadow text-white">
+              <div class="col-sm-12 col-md-6 col-xl-3">
+                <div class="article-card card mb-4 box-shadow text-dark">
                   <div>
                     <img src="https://source.unsplash.com/1500x700/?forest" class="img-fluid  card-bg-img rounded" alt="" >
                   </div>
-                  <div class="card-img-overlay">
+                  <div class="card-body">
                     <h3 class="card-title">Lorem, ipsum dolor.</h3>
                     <p class="card-text d-inline-block text-truncate"style="width:300px;">Lorem itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p>
                     <div class="btn-group d-block">
-                      <button type="button" class="btn btn-sm btn-outline-light">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-light">Edit</button>
+                      <a href="article.html"class="btn btn-sm btn-outline-dark"  target="_blank">Read More</a>
                     </div>
                   </div>
                 </div>   
               </div>
-              <div class="col-sm-12 col-md-6 col-xl-4">
-                <div class="article-card card mb-4 box-shadow text-white">
+              <div class="col-sm-12 col-md-6 col-xl-3">
+                <div class="article-card card mb-4 box-shadow text-dark">
                   <div>
-                    <img src="https://source.unsplash.com/1500x700/?teacher" class="img-fluid  card-bg-img rounded" alt="" >
+                    <img src="https://source.unsplash.com/1500x700/?god" class="img-fluid  card-bg-img rounded" alt="" >
                   </div>
-                  <div class="card-img-overlay">
+                  <div class="card-body">
                     <h3 class="card-title">Lorem, ipsum dolor.</h3>
                     <p class="card-text d-inline-block text-truncate"style="width:300px;">Lorem itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p>
                     <div class="btn-group d-block">
-                      <button type="button" class="btn btn-sm btn-outline-light">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-light">Edit</button>
+                      <a href="article.html"class="btn btn-sm btn-outline-dark"  target="_blank">Read More</a>
                     </div>
                   </div>
                 </div>   
               </div>
-              <div class="col-sm-12 col-md-6 col-xl-4">
-                <div class="article-card card mb-4 box-shadow text-white">
+
+
+              <div class="col-sm-12 col-md-6 col-xl-3">
+                <div class="article-card card mb-4 box-shadow text-dark">
+                  <div>
+                    <img src="https://source.unsplash.com/1500x700/?Ramayan" class="img-fluid  card-bg-img rounded" alt="" >
+                  </div>
+                  <div class="card-body">
+                    <h3 class="card-title">Lorem, ipsum dolor.</h3>
+                    <p class="card-text d-inline-block text-truncate"style="width:300px;">Lorem itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p>
+                    <div class="btn-group d-block">
+                      <a href="article.html"class="btn btn-sm btn-outline-dark"  target="_blank">Read More</a>
+                    </div>
+                  </div>
+                </div>   
+              </div>
+              <div class="col-sm-12 col-md-6 col-xl-3">
+                <div class="article-card card mb-4 box-shadow text-dark">
+                  <div>
+                    <img src="https://source.unsplash.com/1500x700/?fantasy" class="img-fluid  card-bg-img rounded" alt="" >
+                  </div>
+                  <div class="card-body">
+                    <h3 class="card-title">Lorem, ipsum dolor.</h3>
+                    <p class="card-text d-inline-block text-truncate"style="width:300px;">Lorem itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p>
+                    <div class="btn-group d-block">
+                      <a href="article.html"class="btn btn-sm btn-outline-dark"  target="_blank">Read More</a>
+                    </div>
+                  </div>
+                </div>   
+              </div>
+              <div class="col-sm-12 col-md-6 col-xl-3">
+                <div class="article-card card mb-4 box-shadow text-dark">
+                  <div>
+                    <img src="https://source.unsplash.com/1500x700/?books" class="img-fluid  card-bg-img rounded" alt="" >
+                  </div>
+                  <div class="card-body">
+                    <h3 class="card-title">Lorem, ipsum dolor.</h3>
+                    <p class="card-text d-inline-block text-truncate"style="width:300px;">Lorem itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p>
+                    <div class="btn-group d-block">
+                      <a href="article.html"class="btn btn-sm btn-outline-dark"  target="_blank">Read More</a>
+                    </div>
+                  </div>
+                </div>   
+              </div>
+              <div class="col-sm-12 col-md-6 col-xl-3">
+                <div class="article-card card mb-4 box-shadow text-dark">
                   <div>
                     <img src="https://source.unsplash.com/1500x700/?study" class="img-fluid  card-bg-img rounded" alt="" >
                   </div>
-                  <div class="card-img-overlay">
+                  <div class="card-body">
                     <h3 class="card-title">Lorem, ipsum dolor.</h3>
                     <p class="card-text d-inline-block text-truncate"style="width:300px;">Lorem itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p>
                     <div class="btn-group d-block">
-                      <button type="button" class="btn btn-sm btn-outline-light">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-light">Edit</button>
+                      <a href="article.html"class="btn btn-sm btn-outline-dark"  target="_blank">Read More</a>
                     </div>
                   </div>
                 </div>

@@ -32,7 +32,7 @@ $Currentwebsiteurl=basename($_SERVER['REQUEST_URI']);
     <header>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Offcanvas navbar large">
         <div class="container-fluid">
-          <a class="navbar-brand fw-bold" href="index.php">Econtent</a>
+         <a class="navbar-brand fw-bold" href="index.php"><img src="assests/images/favicon-32x32.png" class="img-fluid">   Econtent</a>
           
           <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
             <div class="offcanvas-header">
@@ -42,6 +42,10 @@ $Currentwebsiteurl=basename($_SERVER['REQUEST_URI']);
 <?php if (!isset($_SESSION['userloginvalue'])) { ?>
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <form class="d-flex mt-3 mt-lg-0" role="search">
+                <input class="form-control me-2"type="search" placeholder="Search" aria-label="Search"style="width:340px;min-width:100px" >
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
                 <li class="nav-item">
                   <a class="btn btn-primary m-2 nav-link" href="signup.php"  >Sign Up</a>
                 </li>
@@ -54,6 +58,10 @@ $Currentwebsiteurl=basename($_SERVER['REQUEST_URI']);
 <?php if($_SESSION['userloginvalue']=="True") { ?>
  <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <form class="d-flex mt-3 mt-lg-0" role="search">
+                <input class="form-control me-2"type="search" placeholder="Search" aria-label="Search"style="width:340px;min-width:100px" >
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <i class="fa fa-user-circle fa-2x"></i>

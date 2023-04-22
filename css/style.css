@@ -67,7 +67,7 @@
 }
 .article-container
 {
-    width: 900px;
+    width: auto;
     padding: 3rem;
     display: flex;
     flex-direction: column;
@@ -366,4 +366,72 @@
           border-radius: 37% 63% 69% 31% / 37% 65% 35% 63%;    }
   }
   
-  
+  /* profilepage */
+
+  .profile_body{
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    background-color:hsl(185, 75%, 39%) ;
+    background-position:right bottom,left top;
+    background-position-y: 300px,-300px;
+    background-repeat: no-repeat,no-repeat;
+    background-size: contain;
+    
+    }
+    
+    .profile_container {
+      border-radius: 1rem;
+       margin: 20px;
+      width: 350px;
+    }
+    .profile_img
+    {
+      border-radius: 5rem;
+      border: 5px white solid;
+      position: relative;
+      top: 3rem;
+    }
+    .profile_header
+    {
+        
+        padding: 2rem 0 0 0;
+        border-radius: 1rem 1rem  0 0;
+        display: flex;
+        justify-content: center;
+    }
+    .profile_main
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    min-width: 200px;
+    padding: 100px 0 50px 0;
+    gap: 1rem;
+    border-bottom: 1px hsl(0, 0%, 59%) solid;
+    background-color: rgb(255, 255, 255);
+}
+.profile_footer
+{
+    display: flex;
+    background-color: white;
+    align-items: center;
+    justify-content: space-evenly;
+    height: auto;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 0 0 1rem 1rem;
+}
+
+@media only screen and (max-width: 375px) {
+  .profile_container {
+    width:230px;
+    min-width: 200px;
+  }
+  .profile_footer
+  {
+    flex-direction: column;
+  }
+}

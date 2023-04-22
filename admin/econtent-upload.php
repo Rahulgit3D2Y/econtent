@@ -22,6 +22,9 @@ exit();
 
   $econtentuploadquery="INSERT INTO `econtent_message`(`econtent_message_content_id`, `econtent_message_subcontent_id`,`econtent_message_tittle`,`econtent_message_display_content`, `econtent_message_content`, `econtent_message_image`, `econtent_message_coverphoto`, `econtent_message_contenttype`, `econtent_message_amount`, `econtent_message_download`,`econtent_message_download_file`,`econtent_message_status`, `econtent_message_createdby`, `econtent_message_createdtime`) VALUES ('$InputSelectContent','$InputSubContentSelect','$InputContentTittle','$InputShowContentMessage','$InputContentMessage','$InputContentImage','$InputContentCoverPage','$InputContentType','$InputContentAmount','$InputContentDownload','$InputContentDownloadFile','$status','$log','$date')";
  mysqli_query($con,$econtentuploadquery);
+ $linkid=mysqli_insert_id($con);
+$linkupload=hash('crc32b', $linkid);
+mysqli_query($con,"UPDATE `econtent_message` SET `econtent_message_link`='$linkupload' where `econtent_message_id`='$linkid'");
 echo "<script language='javascript'>alert('Course  \"$InputContentTittle \" Added Successfully');window.location='$Currentwebsiteurl'</script>";
 
 
@@ -218,24 +221,7 @@ $arrselectcontentquery=$selectcontentquerystmt->get_result();
     CKFinder.setupCKEditor(editor1);
 
 
-    function validateForm() {
-  
-  //var selectElement = document.getElementById("inputStatusSelect");
-  if (document.form.InputContentMessage.value == "") {
-    alert("Please Enter Content.");
-    document.form.InputContentMessage.focus();
-    return false;
-  }
-
-if(document.form.InputShowContentMessage.value=="")
-    {
-    alert("Please Enter Display Content");
-  document.form.InputShowContentMessage.focus();
-  return false;
-  }
-  
-  return true;
-}
+ 
 
 </script>
 

@@ -1,5 +1,14 @@
 <?php
   include("include/header.php");
+  extract($_POST);
+
+
+if (!isset($_SESSION['userlogin']))
+{
+   
+    echo "<script>window.location='index.php'</script>";
+    exit();
+}
 ?>
 <style>
   .body
@@ -60,7 +69,7 @@ button[type="submit"]:hover {
 </style>
 <div class="body">
   <form>
-  <label for="old-password">Old Password:</label>
+  <label for="old-password">Current Password:</label>
   <input type="password" id="old-password" name="old-password" required>
   
   <label for="new-password">New Password:</label>
@@ -75,3 +84,6 @@ button[type="submit"]:hover {
 
 </body>
 </html>
+<?php
+  include("include/footer.php");
+?>

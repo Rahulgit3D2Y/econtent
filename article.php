@@ -11,59 +11,224 @@ $messageid = base64_decode(urldecode($messageidfetech));
 $subcontent_id = base64_decode(urldecode($subcontentfetech));
 $content_id = base64_decode(urldecode($messageidfetech2));
 
-echo $messageidfetech . "<br>";
-echo $subcontentfetech . "<br>";
-echo $messageidfetech2 . "<br>";
-echo $messageid . "<br>";
-echo $subcontent_id . "<br>";
-echo $content_id;
+// echo $messageidfetech . "<br>";
+// echo $subcontentfetech . "<br>";
+// echo $messageidfetech2 . "<br>";
+// echo $messageid . "<br>";
+// echo $subcontent_id . "<br>";
+// echo $content_id;
 
   $viearticlequery=mysqli_query($con,"SELECT * FROM `econtent_message` WHERE `econtent_message_id`='$messageid' and `econtent_message_status` = \"Active\"");
 $viearticlequeryresult=mysqli_fetch_assoc($viearticlequery)or die("<script language='javascript'>alert('Error Please Contact To Administrator');window.location='index.php'</script>");
 $contentType= $viearticlequeryresult['econtent_message_contenttype'];
 ?>
+<?php
+$Shareurlink=$viearticlequeryresult['econtent_message_link'];
+$sharelink = "http://localhost/econtent/link.php/$Shareurlink";
+?>
 
      <?php if($contentType=="Non Premium") { ?>
-    <main class="article_main">
-        <div class="article-container">
-            <div class="heading-container">
-              <h1 class="heading"><?php echo $viearticlequeryresult['econtent_message_tittle']; ?></h1>
-             <hr> 
-            </div>
-            <div class="pretext">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos pariatur nihil nemo cumque suscipit impedit ratione vero! Reprehenderit, officia
-            </div>    
-            <img src="./assests/images/11-slow-website-hero-1200x450.jpg" class="img-fluid" alt="">
-            <div class="text">
-              <?php echo $viearticlequeryresult['econtent_message_content']; ?>
-            </div>
-          
-          </div>
-            </main>
-       <?php } elseif($contentType=="Premium")  { ?>
-<main class="article_main">
-        <div class="article-container">
-            <div class="heading-container">
-              <h1 class="heading"><?php echo $viearticlequeryresult['econtent_message_tittle'];;?></h1>
-             <hr> 
-            </div>
-               
-            <img src="assests/images/11-slow-website-hero-1200x450.jpg" class="img-fluid" alt="">
-            <div class="text" style="float:left">
-            
-              <?php echo $viearticlequeryresult['econtent_message_display_content']; ?>
-              <div style="display:inline-block;" class="blur-text unselectable" id="blur-text">
-             <?php echo $viearticlequeryresult['econtent_message_content']; ?>
-            </div> 
-            </div>
-           
-            <div class="btn bt-lg btn-outline-primary" id="blur-btn">Sign up</div>
-          </div>
-            </main>
- <?php } ?>      
+  <main class="article_main">
+      <div class="article-container">
+            <div >
+              <h1 class="heading"><?php echo $viearticlequeryresult['econtent_message_tittle']; ?> </h1>
              
+            </div>
+        <div class="row ">
+            <hr>
+
+          <!-- leftside -->
+          <div class="col-md-8">
+              <img src="./assests/images/11-slow-website-hero-1200x450.jpg" class="img-fluid" alt="">
+              <div class="text">
+                <?php echo $viearticlequeryresult['econtent_message_content']; ?>
+              </div>
+              <div class="d-flex justify-content-between container">
+                    <a href="article.html"class="btn btn-lg btn-outline-dark"  target="_blank">Previous</a>
+                    <a onclick="copyLink('<?php echo $sharelink; ?>')" href="#"><i class="fas fa-share-square fa-lg"></i></a>
+                    <a href="article.html"class="btn btn-lg btn-outline-dark"  target="_blank">Next </a>
+                </div>
+          </div>
+          <!-- rightside -->
+          <div class="col-md-4">
+            <div class="position-sticky" style="top: 2rem;">
+              <div class="p-4 mb-3 bg-dark rounded">
+                <h4 class="fst-italic text-light fw-bold">Related Topics</h4>
+              </div>
+              <div class="row">
+              <div class="col-sm-12">
+                <div class="article-card card mb-4 box-shadow text-dark">
+                  <div>
+                    <img src="assests/images/11-slow-website-hero-1200x450.jpg" class="img-fluid card-bg-img rounded" alt="">
+                  </div>
+                  <div class="card-img-overlay">
+                    <h3 class="card-title">Lorem, ipsum dolor.</h3>
+                    <p class="card-text d-inline-block text-truncate" style="width:300px;">Lorem itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p>
+                    <div class="btn-group d-block">
+                    <a href="article.html"class="btn btn-sm btn-outline-dark"  target="_blank">Read More</a>
+                    </div>
+                  </div>
+                </div>   
+              </div>
+              <div class="col-sm-12">
+                <div class="article-card card mb-4 box-shadow text-dark">
+                  <div>
+                    <img src="https://source.unsplash.com/1200x450/?luffy" class="img-fluid card-bg-img rounded" alt="">
+                  </div>
+                  <div class="card-img-overlay">
+                    <h3 class="card-title">Lorem, ipsum dolor.</h3>
+                    <p class="card-text d-inline-block text-truncate"style="width:300px;">Lorem itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur </p>
+                    <div class="btn-group d-block">
+                      <a href="article.html"class="btn btn-sm btn-outline-dark"  target="_blank">Read More</a>
+                    </div>
+                  </div>
+                </div>   
+              </div>
+              <div class="col-sm-12">
+                <div class="article-card card mb-4 box-shadow text-dark">
+                  <div>
+                    <img src="https://source.unsplash.com/1200x450/?medicine" class="img-fluid  card-bg-img rounded" alt="" >
+                  </div>
+                  <div class="card-img-overlay">
+                    <h3 class="card-title">Lorem, ipsum dolor.</h3>
+                    <p class="card-text d-inline-block text-truncate"style="width:300px;">Lorem itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur </p>
+                    <div class="btn-group d-block">
+                      <a href="article.html"class="btn btn-sm btn-outline-dark"  target="_blank">Read More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+              <div class="col-sm-12">
+                <div class="article-card card mb-4 box-shadow text-dark">
+                  <div>
+                    <img src="https://source.unsplash.com/1200x450/?science" class="img-fluid  card-bg-img rounded" alt="" >
+                  </div>
+                  <div class="card-img-overlay">
+                    <h3 class="card-title">Lorem, ipsum dolor.</h3>
+                    <p class="card-text d-inline-block text-truncate"style="width:300px;">Lorem itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p>
+                    <div class="btn-group d-block">
+                      <a href="article.html"class="btn btn-sm btn-outline-dark"  target="_blank">Read More</a>
+                    </div>
+                  </div>
+                </div>   
+              </div>
+
+            </div>
+            </div>
+          </div>
+        </div>
+
+      </div>     
+
+  </main>
+       <?php } elseif($contentType=="Premium")  { ?>
+  <main class="article_main">
+        <div class="article-container">
+            <div>
+              <h1 class="heading"><?php echo $viearticlequeryresult['econtent_message_tittle'];;?></h1>
+            </div>
+            <div class="row ">
+              <hr>
+
+              <!-- leftside -->
+              <div class="col-md-8">
+                    <img src="./assests/images/11-slow-website-hero-1200x450.jpg" class="img-fluid" alt="">
+                      <div class="text">
+                        <?php echo $viearticlequeryresult['econtent_message_display_content']; ?>
+                        <div  class="blur-text unselectable" id="blur-text">
+                          <?php echo $viearticlequeryresult['econtent_message_content']; ?>
+                        </div>
+                      </div>
+                    <div class="d-flex justify-content-between container">
+                    <a href="article.html"class="btn btn-lg btn-outline-dark"  target="_blank">Previous</a>
+                    <a onclick="copyLink('<?php echo $sharelink; ?>')" href="#"><i class="fas fa-share-square fa-lg"></i></a>
+                    <a href="article.html"class="btn btn-lg btn-outline-dark"  target="_blank">Next </a>
+                  </div>
+              </div>
+              <!-- rightside -->
+              <div class="col-md-4">
+                  <div class="position-sticky" style="top: 2rem;">
+                    <div class="p-4 mb-3 bg-dark rounded">
+                      <h4 class="fst-italic text-light fw-bold">Related Topics</h4>
+                    </div>
+                    <div class="row">
+                    <div class="col-sm-12">
+                      <div class="article-card card mb-4 box-shadow text-dark">
+                        <div>
+                          <img src="assests/images/11-slow-website-hero-1200x450.jpg" class="img-fluid card-bg-img rounded" alt="">
+                        </div>
+                        <div class="card-img-overlay">
+                          <h3 class="card-title">Lorem, ipsum dolor.</h3>
+                          <p class="card-text d-inline-block text-truncate" style="width:300px;">Lorem itur adipisicing elit. rem ipsum dolor sit amet      consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum      dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing     elit. rem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p>
+                          <div class="btn-group d-block">
+                          <a href="article.html"class="btn btn-sm btn-outline-dark"  target="_blank">Read More</a>
+                          </div>
+                        </div>
+                      </div>   
+                    </div>
+                    <div class="col-sm-12">
+                      <div class="article-card card mb-4 box-shadow text-dark">
+                          <div>
+                            <img src="https://source.unsplash.com/1200x450/?luffy" class="img-fluid card-bg-img rounded" alt="">
+                          </div>
+                          <div class="card-img-overlay">
+                            <h3 class="card-title">Lorem, ipsum dolor.</h3>
+                            <p class="card-text d-inline-block text-truncate"style="width:300px;">Lorem itur adipisicing elit. rem ipsum dolor sit amet         consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur </p>
+                            <div class="btn-group d-block">
+                              <a href="article.html"class="btn btn-sm btn-outline-dark"  target="_blank">Read More</a>
+                            </div>
+                          </div>
+                        </div>   
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="article-card card mb-4 box-shadow text-dark">
+                          <div>
+                            <img src="https://source.unsplash.com/1200x450/?medicine" class="img-fluid  card-bg-img rounded" alt="" >
+                          </div>
+                          <div class="card-img-overlay">
+                            <h3 class="card-title">Lorem, ipsum dolor.</h3>
+                            <p class="card-text d-inline-block text-truncate"style="width:300px;">Lorem itur adipisicing elit. rem ipsum dolor sit amet         consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur </p>
+                            <div class="btn-group d-block">
+                              <a href="article.html"class="btn btn-sm btn-outline-dark"  target="_blank">Read More</a>
+                            </div>
+                          </div>
+                        </div>
+                    </div>  
+                    <div class="col-sm-12">
+                      <div class="article-card card mb-4 box-shadow text-dark">
+                        <div>
+                           <img src="https://source.unsplash.com/1200x450/?science" class="img-fluid  card-bg-img rounded" alt="" >
+                        </div>
+                        <div class="card-img-overlay">
+                           <h3 class="card-title">Lorem, ipsum dolor.</h3>
+                           <p class="card-text d-inline-block text-truncate"style="width:300px;">Lorem itur adipisicing elit. rem ipsum dolor sit amet        consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum      dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing       elit. rem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p>
+                          <div class="btn-group d-block">
+                             <a href="article.html"class="btn btn-sm btn-outline-dark"  target="_blank">Read More</a>
+                          </div>
+                        </div>
+                      </div>   
+                    </div>
+
+                  </div>
+              </div>
+            </div>
+        </div>   
+            
+        </div>
+  </main>
+ <?php } ?>      
+           
   </section>
 
+
+
+
+<script>
+function copyLink(link) {
+  navigator.clipboard.writeText(link);
+  alert("Link copied to clipboard!");
+}
+</script>
     
 
 
