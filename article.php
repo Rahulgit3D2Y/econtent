@@ -50,7 +50,8 @@ $sharelink = "http://localhost/econtent/link.php/$Shareurlink";
                 </div>
           </div>
           <!-- rightside -->
-          <div class="col-md-4">
+          <div class="col-md-4" style="max-height: fit-content; /* Adjust the value to fit your layout */
+                overflow-y: auto;">
             <div class="position-sticky" style="top: 2rem;">
               <div class="p-4 mb-3 bg-dark rounded">
                 <h4 class="fst-italic text-light fw-bold">Related Topics</h4>
@@ -146,7 +147,8 @@ $sharelink = "http://localhost/econtent/link.php/$Shareurlink";
                   </div>
               </div>
               <!-- rightside -->
-              <div class="col-md-4">
+              <div class="col-md-4" style="max-height: fit-content; /* Adjust the value to fit your layout */
+                overflow-y: auto;">
                   <div class="position-sticky" style="top: 2rem;">
                     <div class="p-4 mb-3 bg-dark rounded">
                       <h4 class="fst-italic text-light fw-bold">Related Topics</h4>
@@ -157,7 +159,7 @@ $sharelink = "http://localhost/econtent/link.php/$Shareurlink";
                         <div>
                           <img src="assests/images/11-slow-website-hero-1200x450.jpg" class="img-fluid card-bg-img rounded" alt="">
                         </div>
-                        <div class="card-img-overlay">
+                        <div class="card-body">
                           <h3 class="card-title">Lorem, ipsum dolor.</h3>
                           <p class="card-text d-inline-block text-truncate" style="width:300px;">Lorem itur adipisicing elit. rem ipsum dolor sit amet      consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum      dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing     elit. rem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p>
                           <div class="btn-group d-block">
