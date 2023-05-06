@@ -2,9 +2,9 @@
     <style>
         body
     {
-      background-image: url(assests/images/form_pattern.png);
-      background-size: cover;
-      background-position: center;
+      background: #474bff;
+background: -webkit-linear-gradient(44deg, #474bff 0%, #bc48ff 100%);
+background: linear-gradient(44deg, #474bff 0%, #bc48ff 100%);
 
     }
     </style>
