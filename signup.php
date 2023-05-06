@@ -1,6 +1,6 @@
 <?php include("include/header.php"); ?>
     <style>
-        body
+        .sign_body
     {
       background: #474bff;
 background: -webkit-linear-gradient(44deg, #474bff 0%, #bc48ff 100%);
@@ -29,7 +29,7 @@ $passwordhash= hash('whirlpool', $InputUserPassword);
     }
 
     ?>
-    <div  class="sign_body">
+<div  class="sign_body">
   <div class="sign_container">
     <form class="form" method="POST" action="#">
       <h2>Sign up</h2>
@@ -59,8 +59,7 @@ $passwordhash= hash('whirlpool', $InputUserPassword);
         <input type="submit" name="registration" id="registration" value="Sign In">
       </div>
     </form>
-  </div></div>
-</body>
-
-</html>
+  </div>
+</div>
+  <?php include("include/footer.php"); ?>
 

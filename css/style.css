@@ -5,7 +5,10 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
-
+body
+{
+  min-width: 221px;
+}
 .box
 {
     display: flex;
