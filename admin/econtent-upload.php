@@ -13,14 +13,30 @@ if(isset($submit))
 {
 
 
-    $rs=mysqli_query($con,"SELECT * FROM `econtent_message` WHERE `econtent_message_content_id`='$InputSelectContent' AND  `econtent_message_subcontent_id`='$InputSubContentSelect' AND  `econtent_message_tittle`='$InputContentTittle' ");
-if (mysqli_num_rows($rs)>0)
-{
-    echo "<script language='javascript'>alert('$InputContentTittle course id is allready in used');window.location='$Currentwebsiteurl'</script>";
-exit();
-}
+   // $rs=mysqli_query($con,"SELECT * FROM `econtent_message` WHERE `econtent_message_content_id`='$InputSelectContent' AND  `econtent_message_subcontent_id`='$InputSubContentSelect' AND  `econtent_message_tittle`='$InputContentTittle' ");
+//if (mysqli_num_rows($rs)>0)
+//{
+   // echo "<script language='javascript'>alert('$InputContentTittle course id is allready in used');window.location='$Currentwebsiteurl'</script>";
+//exit();
+//}
 
-  $econtentuploadquery="INSERT INTO `econtent_message`(`econtent_message_content_id`, `econtent_message_subcontent_id`,`econtent_message_tittle`,`econtent_message_display_content`, `econtent_message_content`, `econtent_message_image`, `econtent_message_coverphoto`, `econtent_message_contenttype`, `econtent_message_amount`, `econtent_message_download`,`econtent_message_download_file`,`econtent_message_status`, `econtent_message_createdby`, `econtent_message_createdtime`) VALUES ('$InputSelectContent','$InputSubContentSelect','$InputContentTittle','$InputShowContentMessage','$InputContentMessage','$InputContentImage','$InputContentCoverPage','$InputContentType','$InputContentAmount','$InputContentDownload','$InputContentDownloadFile','$status','$log','$date')";
+$messageimage="image_".date('dmY')."".time(); 
+    $imageextension  = pathinfo( $_FILES["InputContentImage"]["name"], PATHINFO_EXTENSION );
+    //$studentphotoupload = $_FILES['inputFileUpload']['name'];
+    $imagetmpphotoname = $_FILES['InputContentImage']['tmp_name'];
+    $imagebasename   = $messageimage . "." . $imageextension;
+    $imageuploadfolder = 'upload/econtent_photo/';
+    move_uploaded_file($imagetmpphotoname, $imageuploadfolder.$imagebasename);
+
+    $messagecoverimage="coverimage_".date('dmY')."".time(); 
+    $coverimageextension  = pathinfo( $_FILES["InputContentCoverPage"]["name"], PATHINFO_EXTENSION );
+    //$studentphotoupload = $_FILES['inputFileUpload']['name'];
+    $coverimagetmpphotoname = $_FILES['InputContentCoverPage']['tmp_name'];
+    $coverimagebasename   = $messagecoverimage . "." . $coverimageextension;
+    $coverimageuploadfolder = 'upload/econtent_cover_photo/';
+    move_uploaded_file($coverimagetmpphotoname, $coverimageuploadfolder.$coverimagebasename);
+
+  $econtentuploadquery="INSERT INTO `econtent_message`(`econtent_message_content_id`, `econtent_message_subcontent_id`,`econtent_message_tittle`,`econtent_message_display_content`, `econtent_message_content`, `econtent_message_image`, `econtent_message_coverphoto`, `econtent_message_contenttype`, `econtent_message_amount`, `econtent_message_download`,`econtent_message_download_file`,`econtent_message_status`, `econtent_message_createdby`, `econtent_message_createdtime`) VALUES ('$InputSelectContent','$InputSubContentSelect','$InputContentTittle','$InputShowContentMessage','$InputContentMessage','$imagebasename','$coverimagebasename','$InputContentType','$InputContentAmount','$InputContentDownload','$InputContentDownloadFile','$status','$log','$date')";
  mysqli_query($con,$econtentuploadquery);
  $linkid=mysqli_insert_id($con);
 $linkupload=hash('crc32b', $linkid);
@@ -38,18 +54,15 @@ echo "<script language='javascript'>alert('Course  \"$InputContentTittle \" Adde
                     document.getElementById("InputContentAmount").required = true;
                      document.getElementById("InputContentAmount").readOnly = false;
                     document.getElementById("InputContentAmount").disabled = false; 
-                     //show content line code
-                    document.getElementById("InputShowContentMessage").required = true;
-                    document.getElementById("InputShowContentMessage").readOnly = false;
-                     document.getElementById("InputShowContentMessage").disabled = false;
+                  
         } else if(jselectedcontenttype == "Non Premium") {
             document.getElementById("InputContentAmount").required = false;
                     document.getElementById("InputContentAmount").readOnly = true;
                     document.getElementById("InputContentAmount").disabled = true;
-                    //show content line code
-                    document.getElementById("InputShowContentMessage").required = false;
-                    document.getElementById("InputShowContentMessage").readOnly = true;
-                     document.getElementById("InputShowContentMessage").disabled = true;
+                    document.getElementById("InputContentAmount").value = "";
+
+                    
+                   
                     
         }
 
@@ -85,7 +98,7 @@ function  InputChangeContentDownload() {
                                 <div class="card shadow-lg border-0 rounded-lg mt-1">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-1">Add E-Content</h3></div>
                                     <div class="card-body">
-                                         <form action="" method="POST" name="form" onsubmit="return validateForm()">
+                                         <form action="" method="POST" name="form" onsubmit="return validateForm()" enctype="multipart/form-data">
                                             <div class="row mb-3">
                                                 <div class="col-md-3">
                                                    <div class="form-floating mb-3 mb-md-0">
@@ -158,8 +171,8 @@ $arrselectcontentquery=$selectcontentquerystmt->get_result();
                                                     <div class="form-floating mb-3 mb-md-0">
                                                         <select class="form-select"  name="InputContentType" id="InputContentType" onchange="InputChangeContentType()" required>
                                                             <option selected="selected" value="" disabled selected>-- Select an option --</option>
-                                                            <option id="Non Premium">Non Premium</option>
-                                                            <option id="Premium">Premium</option>
+                                                            <option id="Non Premium" value="Non Premium">Non Premium</option>
+                                                            <option id="Premium" value="Premium">Premium</option>
                                                         </select>
                                                         <label for="InputContentType">Content Type</label>
                                                     </div>
@@ -187,8 +200,8 @@ $arrselectcontentquery=$selectcontentquerystmt->get_result();
                                                     <div class="form-floating mb-3 mb-md-0">
                                                         <select class="form-select"  name="InputContentDownload" id="InputContentDownload" onchange="InputChangeContentDownload()" required>
                                                             <option selected="selected" value="" disabled selected>-- Select an option --</option>
-                                                            <option id="Yes">Yes</option>
-                                                            <option id="No">No</option>
+                                                            <option id="Yes" value="Yes">Yes</option>
+                                                            <option id="No" value="No">No</option>
                                                         </select>
                                                         <label for="InputContentDownload">User Content Download</label>
                                                     </div>

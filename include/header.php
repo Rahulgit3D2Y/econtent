@@ -42,8 +42,8 @@ $Currentwebsiteurl=basename($_SERVER['REQUEST_URI']);
 <?php if (!isset($_SESSION['userloginvalue'])) { ?>
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <form class="d-flex mt-3 mt-lg-0" role="search">
-                <input class="form-control me-2"type="search" placeholder="Search" aria-label="Search"style="width:340px;min-width:100px" >
+                <form class="d-flex mt-3 mt-lg-0" role="search" method="GET" action="search.php">
+                <input class="form-control me-2"type="search" name="q" id="q" value="<?php echo $q; ?>" placeholder="Search" aria-label="Search"style="width:340px;min-width:100px" >
                 <button class="btn btn-outline-success" type="submit">Search</button>
               </form>
                 <li class="nav-item">
@@ -58,8 +58,8 @@ $Currentwebsiteurl=basename($_SERVER['REQUEST_URI']);
 <?php if($_SESSION['userloginvalue']=="True") { ?>
  <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <form class="d-flex mt-3 mt-lg-0" role="search">
-                <input class="form-control me-2"type="search" placeholder="Search" aria-label="Search"style="width:340px;min-width:100px" >
+                <form class="d-flex mt-3 mt-lg-0" role="search" method="GET" action="search.php">
+                <input class="form-control me-2"type="search" name="q" id="q" placeholder="Search"   value="<?php echo $q; ?>" aria-label="Search"style="width:340px;min-width:100px" >
                 <button class="btn btn-outline-success" type="submit">Search</button>
               </form>
                 <li class="nav-item dropdown">

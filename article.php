@@ -3,7 +3,7 @@
 ?>
 <?php 
 
-$messageidfetech = $_GET['message_id'];
+$messageidfetech = $_GET['mid'];
 $subcontentfetech = $_GET['subcontent_id'];
 $messageidfetech2 = $_GET['content_id'];
 
@@ -39,19 +39,19 @@ $sharelink = "http://localhost/econtent/link.php/$Shareurlink";
 
           <!-- leftside -->
           <div class="col-md-8">
-              <img src="./assests/images/11-slow-website-hero-1200x450.jpg" class="img-fluid" alt="">
-              <div class="text">
+              <img src="admin/upload/econtent_photo/<?php echo $viearticlequeryresult['econtent_message_image'];?>" class="img-fluid" alt="">
+              <section class="text">
                 <?php echo $viearticlequeryresult['econtent_message_content']; ?>
-              </div>
+              </section>
               <div class="d-flex justify-content-between container">
                     <a href="article.html"class="btn btn-lg btn-outline-dark"  target="_blank">Previous</a>
                     <a onclick="copyLink('<?php echo $sharelink; ?>')" href="#"><i class="fas fa-share-square fa-lg"></i></a>
                     <a href="article.html"class="btn btn-lg btn-outline-dark"  target="_blank">Next </a>
                 </div>
+                <br>
           </div>
           <!-- rightside -->
-          <div class="col-md-4" style="max-height: fit-content; /* Adjust the value to fit your layout */
-                overflow-y: auto;">
+          <div class="col-md-4" style="max-height: fit-content; overflow-y:auto;">
             <div class="position-sticky" style="top: 2rem;">
               <div class="p-4 mb-3 bg-dark rounded">
                 <h4 class="fst-italic text-light fw-bold">Related Topics</h4>
@@ -62,7 +62,7 @@ $sharelink = "http://localhost/econtent/link.php/$Shareurlink";
                   <div>
                     <img src="assests/images/11-slow-website-hero-1200x450.jpg" class="img-fluid card-bg-img rounded" alt="">
                   </div>
-                  <div class="card-img-overlay">
+                  <div class="card-body">
                     <h3 class="card-title">Lorem, ipsum dolor.</h3>
                     <p class="card-text d-inline-block text-truncate" style="width:300px;">Lorem itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicin itur adipisicing elit. rem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p>
                     <div class="btn-group d-block">
@@ -133,22 +133,22 @@ $sharelink = "http://localhost/econtent/link.php/$Shareurlink";
 
               <!-- leftside -->
               <div class="col-md-8">
-                    <img src="./assests/images/11-slow-website-hero-1200x450.jpg" class="img-fluid" alt="">
-                      <div class="text">
+                    <img src="admin/upload/econtent_photo/<?php echo $viearticlequeryresult['econtent_message_image'];?>" class="img-fluid" alt="">
+                      <section class="text">
                         <?php echo $viearticlequeryresult['econtent_message_display_content']; ?>
-                        <div  class="blur-text unselectable" id="blur-text">
+                        <section  class="blur-text unselectable" id="blur-text">
                           <?php echo $viearticlequeryresult['econtent_message_content']; ?>
-                        </div>
-                      </div>
+                        </section>
+                       </section>
                     <div class="d-flex justify-content-between container">
                     <a href="article.html"class="btn btn-lg btn-outline-dark"  target="_blank">Previous</a>
                     <a onclick="copyLink('<?php echo $sharelink; ?>')" href="#"><i class="fas fa-share-square fa-lg"></i></a>
                     <a href="article.html"class="btn btn-lg btn-outline-dark"  target="_blank">Next </a>
                   </div>
+                  <br>
               </div>
               <!-- rightside -->
-              <div class="col-md-4" style="max-height: fit-content; /* Adjust the value to fit your layout */
-                overflow-y: auto;">
+              <div class="col-md-4" style="max-height: fit-content; overflow-y:auto;">
                   <div class="position-sticky" style="top: 2rem;">
                     <div class="p-4 mb-3 bg-dark rounded">
                       <h4 class="fst-italic text-light fw-bold">Related Topics</h4>

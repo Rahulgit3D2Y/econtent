@@ -1,129 +1,12 @@
 <?php include("include/header.php"); ?>
     <main class="container-fluid p-3">
-        <div class="row">
-            <!-- <div class="col-md-8"> -->
-              <!-- <div> 
-                <img src="assests/images/image-web-3-desktop.jpg"class="img-fluid hero-img" alt="" >
-              </div> -->
-              <!-- <div id="carouselExampleIndicators" class="carousel slide container" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img class="d-block w-100 " src="./assests/images/image-web-3-desktop.jpg" alt="First slide" ">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Lorem, ipsum dolor.</h5>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus!</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100 " src="https://source.unsplash.com/1000x1000?" alt="Second slide"">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Lorem, ipsum dolor.</h5>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus!</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="img-fluid hero-img" src="./assests/images/image-gaming-growth.jpg" alt="Third slide"">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Lorem, ipsum dolor.</h5>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus!</p>
-                    </div>
-                  </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </div> -->
-                <!-- <div class="row py-3">
-                    <div class="col-xl-6 p-3 my-3">
-                        <div class="display-4 fw-bold w-100">THE Lorem ipsum dolor sit.</div>
-                    </div>
-                    <div class="col-xl-6 p-3  my-3">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, repellendus nulla a est aliquid ullam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit eveniet repellat porro accusamus? Consequuntur, aperiam?</p>
-                        <button class="btn btn-lg btn-outline-success"data-toggle="modal" data-target="#myModal">Read More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 ">
-              <div class="row">
-                <div class="bg-dark py-3  news-box">
-                    <h2 class="text-warning">New</h2>
-                      <?php
+        <section class="row">
 
-  // $count = 0;
-  //  $NewArticledview=mysqli_query($con,"SELECT * FROM `econtent_message` WHERE `econtent_message_status`='Active'  ORDER BY `econtent_message_id` DESC");
-  // while($NewArticledviewresult=mysqli_fetch_assoc($NewArticledview))
-  //   {
-  //       $count+=1;
-  //       $messageid=$NewArticledviewresult['econtent_message_id'];
-  //       $messagecontentid=$NewArticledviewresult['econtent_message_content_id'];
-  //       $messagesubcontentid=$NewArticledviewresult['econtent_message_subcontent_id'];
-  //       $messagecontentTitle=$NewArticledviewresult['econtent_message_tittle'];
-      ?>
-      
-                    <div class="article">
-                      <a href="article.php?title=<?php// echo $messagecontentTitle; ?>&mid=<?php //echo urlencode(base64_encode($messageid)); ?>" style=" color: white; text-decoration:none ">
-                         <h4 class="text-light"><?php //echo $NewArticledviewresult['econtent_message_tittle']." (".$NewArticledviewresult['econtent_message_contenttype'].")"; ?></h4>
-                      <p class="text-secondary"><?php// echo substr($NewArticledviewresult['econtent_message_content'],0,62);  ?></p></a> 
-                    </div>
-                    <hr class="text-secondary">
-                   <?php// } ?>
-                    
-
-
-                </div>
-              </div>
-                
-            </div>  
-        </div>      
-        <div class="row box ">
-            <div class="col-md-4 aaaa">
-                <div>
-                    <img src="./assests/images/image-retro-pcs.jpg" class="img-fluid " alt="">
-                </div>
-                <div>
-                    <h3>01</h3>
-                    <h3>Lorem, ipsum dolor.</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p>
-                </div>
-            </div>
-            <div class="col-md-4 aaaa ">
-                <div>
-                    <img src="./assests/images/image-gaming-growth.jpg" class="img-fluid " alt="">
-                </div>
-                <div>
-                    <h3>02</h3>
-                    <h3>Lorem, ipsum dolor.</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p>
-                </div>
-            </div>
-            <div class="col-md-4 aaaa">
-                <div>
-                    <img src="./assests/images/image-top-laptops.jpg" class="img-fluid " alt="">
-                </div>
-                <div>
-                    <h3>03</h3>
-                    <h3>Lorem, ipsum dolor.</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p>
-                </div>
-            </div>
-        </div> -->
-
-       
-       <!-- Article-cards -->       
-<section class="container" id="article-section">  
-            <div class="album p-5 bg-light">
+ <!-- Article-cards -->       
+        <section class="container" id="article-section">  
+            <section class="album p-5 bg-light">
           
-            <div class="row">
+            <section class="row">
  <?php
 
   $count = 0;
@@ -136,34 +19,34 @@
         $messagesubcontentid=$NewArticledviewresult['econtent_message_subcontent_id'];
         $messagecontentTitle=$NewArticledviewresult['econtent_message_tittle'];
       ?>
-              <div class="col-sm-12 col-md-6 col-xl-3">
-                <div class="article-card card mb-4 box-shadow text-dark" style="overflow:hidden; height:400px">
-                  <div>
-                    <img src="assests/images/11-slow-website-hero-1200x450.jpg" class="img-fluid card-bg-img rounded" alt="">
-                  </div>
+              <section class="col-sm-12 col-md-6 col-xl-3">
+                <section class="article-card card mb-4 box-shadow text-dark" style="overflow:hidden; height:450px">
+                  
+                    <img src="admin/upload/econtent_photo/<?php echo $NewArticledviewresult['econtent_message_image'];?>" class="img-fluid card-bg-img rounded" alt="<?php echo $NewArticledviewresult['econtent_message_tittle']; ?>">
+                  
                   <?php if($NewArticledviewresult['econtent_message_contenttype']=="Premium") { ?>  
-                  <div class="card-img-overlay">
-                    <i class="fa-solid fa-star" style="color: #ffec1f; float:right"><p class="text-light p-2 d-inline">aaaa</p></i>
-                </div>
+                  <section class="card-img-overlay">
+                    <i class="fa-solid fa-star" style="color: #ffec1f; float:right"><p class="text-light p-2 d-inline">Premium</p></i>
+                </section>
             <?php } ?>
-                  <div class="card-body">
-                  <h3 class="card-title"><?php echo $NewArticledviewresult['econtent_message_tittle']; ?></h3>
-                    <p class="card-text d-inline-block text-truncate" style="width:300px;"><?php echo substr($NewArticledviewresult['econtent_message_content'],0,62);  ?></p>
-                    <div class="btn-group d-block" style="position: absolute; bottom: 0;">
+                  <section class="card-body">
+                    <h6 class="card-title"><strong><?php echo $NewArticledviewresult['econtent_message_tittle']; ?></strong></h6>
+                    <p class="card-text d-inline-block text-truncate" style="width:300px;"><?php echo substr($NewArticledviewresult['econtent_message_content'],0,162);  ?>.......... </p>
+                    <section class="btn-group d-block" style="position: absolute; bottom: 0;">
                         <a href="article.php?title=<?php echo $messagecontentTitle; ?>&mid=<?php echo urlencode(base64_encode($messageid)); ?>">Read More</a>
-                    </div>
+                    </section>
                     
-                  </div>
-                </div>   
-              </div>
-        <?php } ?>
+                  </section>
+                </section>   
+              </section>
+             <?php } ?>
               
           
-            </div>
-  </section>
+            </section>
+        </section>
         
         
-  </main>
+    </main>
 
 
 
