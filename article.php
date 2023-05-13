@@ -44,12 +44,40 @@ $sharelink = "http://localhost/econtent/link.php/$Shareurlink";
                 <?php echo $viearticlequeryresult['econtent_message_content']; ?>
               </section>
               <div class="d-flex justify-content-between container">
-                    <a href="article.html"class="btn btn-lg btn-outline-dark"  target="_blank">Previous</a>
+                    <a href="article.html"class="btn btn-lg btn-outline-dark"  target="_blank">Previous</a><button class="btn btn-lg btn-outline-dark"  onclick="downloadWord()">Download as Word</button>
                     <a onclick="copyLink('<?php echo $sharelink; ?>')" href="#"><i class="fas fa-share-square fa-lg"></i></a>
                     <a href="article.html"class="btn btn-lg btn-outline-dark"  target="_blank">Next </a>
                 </div>
                 <br>
+                
+                  <script>
+                    function downloadWord() {
+                      const content = `
+                        <html>
+                          <head>
+                            <meta charset="utf-8">
+                            <title>Document</title>
+                          </head>
+                          <body>
+                          <h1 class="heading"><?php echo $viearticlequeryresult['econtent_message_tittle']; ?> </h1>
+                            <img src="https://source.unsplash.com/800x500/?car" alt="Image">
+                            <div class="text">
+                              ${document.querySelector('.text').innerHTML}
+                            </div>
+                          </body>
+                        </html>
+                      `;
+                      const filename = 'Article.docx';
+                      const blob = new Blob(['\ufeff', content], {type:'application/msword'});
+                      const link = document.createElement('a');
+                      link.href = URL.createObjectURL(blob);
+                      link.download = filename;
+                      link.click();
+                    }
+                  </script>
+
           </div>
+          
           <!-- rightside -->
           <div class="col-md-4" style="max-height: fit-content; overflow-y:auto;">
             <div class="position-sticky" style="top: 2rem;">
